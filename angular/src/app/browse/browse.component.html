@@ -1,0 +1,25 @@
+<div class="browse">
+    <h1>Browse Characters</h1>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Homeworld</th>
+        <th>Species</th>
+      </tr>
+      @for (character of characters; track $index) {
+      <tr>
+        <td><a [routerLink]="['/character']" [queryParams]="{name: character.name}">{{character.name}}</a></td>
+        <td>{{character.homeworld}}</td>
+        <td><a [routerLink]="['/species']" [queryParams]="{name: character.species}">{{character.species}}</a></td>
+      </tr>
+    }
+    </table>
+    <div class="pager">
+      @if (showPrevious()) {  
+        <button class="prev" (click)="onPrevious()"> prev </button>
+      }
+      @if (showNext()) {
+        <button class="next" (click)="onNext()"> next </button>
+      }
+    </div>
+  </div>
