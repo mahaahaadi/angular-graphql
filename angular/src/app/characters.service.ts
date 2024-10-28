@@ -15,6 +15,7 @@ export interface CharacterDetail extends Character {
   eye_color: string;
   birth_year: string;
   gender: string;
+  description:string
 }
 
 export interface CharactersResult {
@@ -71,6 +72,7 @@ export class CharactersService {
           gender
           homeworld
           species
+          description
         }
       }`
     });

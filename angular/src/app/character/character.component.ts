@@ -16,8 +16,6 @@ export class CharacterComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(async (params) => {
-      console.log("hi");
-      
       this.character = await this.characterService.findCharacter(params['name']);
     });
   }
